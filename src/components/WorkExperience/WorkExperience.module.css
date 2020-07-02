@@ -6,7 +6,7 @@
     height: 100vh;
     overflow: none;
     align-items: center;
-    background: url("../../assets/Images/cover.png") center;
+    background: url("../../assets/images/cover.png") center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
