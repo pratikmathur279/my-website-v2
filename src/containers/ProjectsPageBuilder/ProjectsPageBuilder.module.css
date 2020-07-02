@@ -1,0 +1,76 @@
+.ProjectsContainer{
+    display: block;
+    height: 100vh;
+    width: 100%;
+    overflow: none;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    background: url("../../assets/Images/cover_2.jpg") center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+            -moz-animation: fadein 1s; /* Firefox */
+            -ms-animation: fadein 1s; /* Internet Explorer */
+            -o-animation: fadein 1s; /* Opera */
+}
+
+.ProjectsContainer .title{
+    display: block;
+    position: absolute;
+    top: 20%;
+    left: 150px;
+    width: 700px;
+    color: white;
+    font-size: 4.5em;
+    line-height: 1.6em;
+    text-align: left;
+    font-family: 'Bariol';
+}
+
+.ProjectsContainer .title h3{
+    font-weight: 100;
+    font-family: 'Bariol';
+}
+
+.ProjectsHeader {
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .ProjectsContainer {
+        height: 70vh;
+        margin-bottom: 30px;
+    }
+
+    .ProjectsContainer .title {
+        font-size: 2.70em;
+        position: relative;
+        left: initial;
+        margin: auto;
+        width: 100%;
+    }
+
+    .ProjectsContainer .title h3{
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

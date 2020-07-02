@@ -1,0 +1,45 @@
+.Experience {
+    margin-bottom: 0px;
+    /* border-bottom: 1px solid grey; */
+    padding-bottom: 20px;
+}
+
+.Experience h3 {
+    margin: 10px 0;
+    font-size: 1.25em;
+}
+
+.Experience h4{
+    margin: 3px 0;
+}
+
+.container {
+    width: 100%;
+}
+
+.responsibilities {
+    margin: 8px 0;
+}
+
+.responsibilities li {
+    margin: 7px 0;
+    line-height: 1.8em;
+}
+
+.Experience span {
+    font-weight: bold;
+}
+
+@media (max-width: 500px){
+    .container h4{
+        width: 75%;
+    }
+
+    .container p {
+        width: 25%;
+    }
+
+    .responsibilities{
+        padding-left: 30px;
+    }
+}

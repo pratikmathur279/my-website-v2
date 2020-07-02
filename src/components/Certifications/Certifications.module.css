@@ -1,0 +1,49 @@
+.Section{
+    height: fit-content;
+    padding: 25px 60px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.Section h2{
+    font-size: 2em;
+    font-weight: 100;
+    width: 300px;
+    
+}
+
+.CertificationsRow {
+    /* width: 100%; */
+    width: calc(100% - 300px);
+    padding: 0 75px;
+    line-height: 1.4em;
+    padding-top: 15px;
+}
+
+.Certifications{
+    padding-bottom: 5px;
+}
+
+.Certifications h3{
+    overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 800px) {
+    .Section{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .Section h2{
+        margin: 5px 0;
+    }
+
+    .CertificationsRow {
+        padding: 0 ;
+        width: 100%;
+    }
+
+    .Certifications{
+        padding-bottom: 10px;
+    }
+}

@@ -1,0 +1,98 @@
+.Homepage {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.Homepage p{
+    display: block;
+    margin: 0 auto; 
+    width: 300px;
+    padding-top: 40px;   
+    color: black;
+    line-height: 2em;
+    font-size: 18px;
+    color: grey;
+    opacity: 0.6;
+}
+
+.Container2{
+    display: flex;
+    flex-direction: row;
+    padding: 0 50px;
+    margin-bottom: 50px;
+}
+
+.IntroContainer {
+    width: 50%;
+}
+
+.SkillsContainer{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding: 25px 0;
+    
+}
+.HomePageContainer {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+    overflow: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: url("../../assets/Images/cover.png") center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+            -moz-animation: fadein 1s; /* Firefox */
+            -ms-animation: fadein 1s; /* Internet Explorer */
+            -o-animation: fadein 1s; /* Opera */
+
+    /* background-repeat: no-repeat; */
+    background-color: teal;
+}
+
+  @media screen and (max-width: 800px){
+    .HomePageContainer {
+        height: 50vh;
+        min-height: initial;
+    }
+
+    .Container2 {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .IntroContainer {
+        width: 100%;
+    }
+
+    .SkillsContainer{
+        width: 90%;
+    }
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

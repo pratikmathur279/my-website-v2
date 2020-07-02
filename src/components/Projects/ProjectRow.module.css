@@ -1,0 +1,32 @@
+.ProjectRow{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.ProjectDiv{
+    display: block;
+    margin: 50px auto;
+    width: 90vw;
+    text-align: center;
+    align-items: center;
+    
+}
+
+@media (max-width: 800px){
+    .ProjectRow{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ProjectHeader {
+        display: block;
+        margin: 0 auto;
+    }
+    .ProjectDiv {
+        margin: 5px auto;
+        padding-bottom: 5px;
+    }
+}
