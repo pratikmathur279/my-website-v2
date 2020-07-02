@@ -59,7 +59,7 @@ class HomepageBuilder extends Component {
     render () {
         return (
             <Auxiliary>
-                <Homepage image='/images/pratik.jpg' alt={this.state.name} hexagons={this.state.hexagons} skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
+                <Homepage image='/Images/pratik.jpg' alt={this.state.name} hexagons={this.state.hexagons} skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
             </Auxiliary>
         );
     }
