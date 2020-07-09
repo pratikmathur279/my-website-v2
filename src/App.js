@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import { Route, BrowserRouter, Switch } from "react-router-dom";
+import { Route, BrowserRouter, Switch, Router, HashRouter } from "react-router-dom";
+
 
 import Layout from './hoc/Layout/Layout';
 import classes from './App.module.css';
@@ -15,7 +16,7 @@ import Footer from '../src/components/UI/Footer/Footer';
 class App extends Component {
   render () {
     return (
-      <BrowserRouter>
+      <HashRouter>
       <div classes={classes.App}>
         
         <Layout/>
@@ -29,7 +30,7 @@ class App extends Component {
 
         <Footer />
       </div>
-      </BrowserRouter>
+      </HashRouter>
       
     );
   }
