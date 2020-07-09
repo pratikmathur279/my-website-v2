@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 import Layout from './hoc/Layout/Layout';
 import classes from './App.module.css';
@@ -19,13 +19,13 @@ class App extends Component {
       <div classes={classes.App}>
         
         <Layout/>
-        <div className="content">
-        <Route exact path="/" component={HomepageBuilder}/>
+        <Switch>
+            <Route exact path="/" component={HomepageBuilder}/>
             <Route path="/about" component={AboutPageBuilder}/>
             <Route path="/resume" component={ResumeBuilder} />
             <Route path="/projects" component={ProjectsPageBuilder}/>
             <Route path="/contact" component={ContactPageBuilder}/>
-        </div>
+        </Switch>
 
         <Footer />
       </div>
