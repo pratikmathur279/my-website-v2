@@ -7,7 +7,7 @@ import Description from '../Description/Description';
 const AboutPage = (props) => {
     console.log(props.instagram);
     const buildInstagram = (i) => {
-        return <div className={classes.Photo}><img src={i} /></div>;
+        return <div className={classes.Photo}><img alt="instagram" src={i} /></div>;
     }
 
     return(

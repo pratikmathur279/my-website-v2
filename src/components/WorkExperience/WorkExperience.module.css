@@ -10,7 +10,6 @@
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    background-color: teal;
     -webkit-animation: fadein 1s; /* Safari and Chrome */
             -moz-animation: fadein 1s; /* Firefox */
             -ms-animation: fadein 1s; /* Internet Explorer */

@@ -65,7 +65,18 @@
     "webpack": "^4.42.0",
     "webpack-dev-server": "^3.0.0",
     "webpack-manifest-plugin": "1.2.1",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.3",
+    "browser-sync": "^2.26.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect-php": "0.0.7",
+    "gulp-image-resize": "^0.7.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-sass": "^3.2.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^1.12.1"
   },
   "scripts": {
     "start": "react-scripts start",

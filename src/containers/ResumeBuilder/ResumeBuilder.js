@@ -7,8 +7,6 @@ import Certifications from '../../components/Certifications/Certifications';
 
 import Actions from '../../actions/Actions';
 
-import _ from 'lodash';
-
 class ResumeBuilder extends Component {
     constructor() {
         super();
@@ -40,22 +38,6 @@ class ResumeBuilder extends Component {
     }
 
     createColumns(data){
-        // let index = 0;
-        // data.forEach((el,i) => {
-        //     console.log(el);
-        //     if(el.type == 'Experience With'){
-        //         index = i;
-        //         console.log(index);
-        //     }
-        // });
-        // var arr = [];
-        // var original = clone(data);
-
-        // while(original.length > 0){
-        //     var split = original.splice(0, index);
-        //     arr.push(split);
-        // }
-
         let arr = [];
         arr[0] = [];
         arr[1] = [];

@@ -1,5 +1,5 @@
 .Toolbar {
-    height: 75px;
+    height: 95px;
     width: 100%;
     padding: 50px;
     /* background-color: #0054a4; */
@@ -9,7 +9,7 @@
     align-items: center;
     padding: 0px;
     position: absolute;
-    top: 0;
+    top: 10px;
     box-sizing: border-box;
     z-index: 90;
 }
@@ -18,8 +18,8 @@
     height: 100%;
 }
 
-.Logo {
-    height: 80%;
+.Logo{
+    display: none;
 }
 
 .DesktopOnly {
@@ -34,5 +34,12 @@
     
     .Toolbar {
         height: 55px;
+    }
+
+    .Logo{
+        display: block;
+        width: 75px;
+        margin-left: 5px;
+        cursor: pointer;
     }
 }

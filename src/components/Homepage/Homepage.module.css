@@ -56,7 +56,6 @@
             -o-animation: fadein 1s; /* Opera */
 
     /* background-repeat: no-repeat; */
-    background-color: teal;
 }
 
   @media screen and (max-width: 800px){

@@ -19,8 +19,8 @@
     width: fit-content;
     content: attr(value);
     position: absolute;
-    top: 7px;
-    left: 15px;
+    top: 3px;
+    left: 18px;
 }
 
 .Filler span:nth-child(2){
