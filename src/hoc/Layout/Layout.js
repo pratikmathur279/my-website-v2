@@ -4,7 +4,6 @@ import Auxiliary from '../Auxiliary';
 import classes from './Layout.module.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
-import AboutDrawer from '../../components/UI/AboutDrawer/AboutDrawer';
 
 class Layout extends Component {
     state = {
@@ -28,6 +27,7 @@ class Layout extends Component {
     }
 
     sideDrawerToggleHandler = () => {
+        console.log(document.getElementById('Burger').classList.add('active'));
         this.setState( ( prevState ) => {
             return { showSideDrawer: !prevState.showSideDrawer };
         } );
@@ -37,9 +37,6 @@ class Layout extends Component {
         return (
             <Auxiliary>
                 <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} aboutToggleClicked={this.aboutDrawerToggleHandler} />
-                <AboutDrawer 
-                    open={this.state.showAboutDrawer} 
-                    closed={this.aboutDrawerClosedHandler}/>
                 <SideDrawer
                     open={this.state.showSideDrawer}
                     closed={this.sideDrawerClosedHandler} />

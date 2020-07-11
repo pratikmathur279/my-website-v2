@@ -1,25 +1,52 @@
 .DrawerToggle {
     width: 40px;
     height: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-around;
     align-items: center;
     padding: 10px 0;
     margin-left: 5px;
     position: absolute;
-    right: 5px;
+    right: 15px;
     box-sizing: border-box;
     cursor: pointer;
 }
 
-.DrawerToggle div {
-    width: 90%;
+.Burger{
+    margin-top: 20px;
+    position:relative;
+    width: 40px;
     height: 3px;
-    background-color: white;
+    background: white;
+    transform-origin: center;
 }
 
-@media (min-width: 500px) {
+.Burger:before, .Burger:after {
+    position:absolute;
+    width:inherit;
+    height:inherit;
+    background: inherit;
+    content: '';
+    transform: rotate(0deg);
+    transition-duration: 0.15s;
+}
+
+.Burger:before { top: -12px; }
+
+.Burger:after { bottom: -12px; }
+
+.Burger.active {
+    background-color: transparent;
+}
+
+.Burger.active:before, .Burger.active:after {
+    background-color: #5db65f;
+    top: 0;
+    transition-duration: 0.15s;
+}
+.Burger.active:before { transform: rotate(45deg); }
+.Burger.active:after { transform: rotate(-45deg); }
+
+
+@media (min-width: 800px) {
     .DrawerToggle {
         display: none;
     }

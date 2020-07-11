@@ -27,7 +27,7 @@
     margin: 0 auto;
 }
 
-@media (max-width: 499px) {
+@media (max-width: 800px) {
     .DesktopOnly {
         display: none;
     }
@@ -38,7 +38,8 @@
 
     .Logo{
         display: block;
-        width: 75px;
+        width: 95px;
+        margin-top: 20px;
         margin-left: 5px;
         cursor: pointer;
     }

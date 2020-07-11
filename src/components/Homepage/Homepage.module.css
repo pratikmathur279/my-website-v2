@@ -58,7 +58,7 @@
     /* background-repeat: no-repeat; */
 }
 
-  @media screen and (max-width: 800px){
+  @media screen and (max-width: 500px){
     .HomePageContainer {
         height: 50vh;
         min-height: initial;

@@ -6,7 +6,7 @@ import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 import AboutWebsite from '../AboutWebsite/AboutWebsite';
 import { Link } from 'react-router-dom';
 
-const toolbar = ( props ) => (
+const Toolbar = ( props ) => (
     <header className={classes.Toolbar}>
         <DrawerToggle clicked={props.drawerToggleClicked} />
         <Link to="/"><img className={classes.Logo} src="/images/logo.png" /></Link>
@@ -16,4 +16,4 @@ const toolbar = ( props ) => (
     </header>
 );
 
-export default toolbar;
+export default Toolbar;

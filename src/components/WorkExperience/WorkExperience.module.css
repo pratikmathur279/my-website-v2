@@ -44,10 +44,10 @@
 .Container .heading {
     display: block;
     /* position: absolute; */
-    top: 30%;
+    top: 0%;
     color: white;
     font-family: 'Bariol';
-    font-size: 4.5em;
+    font-size: 32px;
     font-weight: 100;
     letter-spacing: 3px;
     width: 600px;
@@ -106,7 +106,7 @@ a:active{
 @media screen and (max-width: 500px) {
     .Container .heading {
         padding-top: 50px;
-        font-size: 0.80em;
+        font-size: 1.8em;
         width: 100%;
     }
 
