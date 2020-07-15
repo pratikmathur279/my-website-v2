@@ -1,5 +1,5 @@
 .Toolbar {
-    height: 95px;
+    height: 100px;
     width: 100%;
     padding: 50px;
     /* background-color: #0054a4; */
@@ -8,11 +8,30 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    position: absolute;
-    top: 10px;
+    position: fixed;
+    top: 0px;
     box-sizing: border-box;
+    background-color: transparent;
     z-index: 90;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
 }
+
+@media screen and (min-width: 800px){
+    .Scrolled{
+        background-color: white;
+        box-shadow: 1px 1px #d3d3d3;
+        -webkit-transition: background-color 200ms linear;
+        -ms-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+    }
+    
+    .Scrolled a{
+        color: #083953 !important;
+    }
+}
+
 
 .Toolbar nav {
     height: 100%;
@@ -33,13 +52,16 @@
     }
     
     .Toolbar {
-        height: 55px;
+        height: 95px;
+        top: 0px;
+        position: absolute;
+        z-index: 99999;
     }
 
     .Logo{
         display: block;
         width: 95px;
-        margin-top: 20px;
+        margin-top: 0px;
         margin-left: 5px;
         cursor: pointer;
     }

@@ -60,7 +60,7 @@
 
   @media screen and (max-width: 500px){
     .HomePageContainer {
-        height: 50vh;
+        height: 70vh;
         min-height: initial;
     }
 

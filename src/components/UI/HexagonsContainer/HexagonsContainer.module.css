@@ -3,6 +3,7 @@
   flex-direction: row;
   height: 300px;
   width: 70vw;
+  min-width: fit-content;
   margin: 20px auto;
   justify-content: space-between;
 }
@@ -99,7 +100,18 @@ border-top: 37.53px solid #64C7CC;
     width: 100vw;
 }
   .AlignHexagon {
-    margin-left: 0px;
+    margin: 50px auto;
+    flex: 1 0 50%;
+  }
+
+  .AlignHexagon .Hexagon{
+    margin: 50px auto;
+  }
+
+  .AlignHexagon p, .AlignHexagon h3{
+    width: fit-content;
+    max-width: 200px;
+    margin: 10px auto;
   }
   
   .AlignHexagon:nth-child(2){
@@ -127,13 +139,7 @@ border-top: 37.53px solid #64C7CC;
   }
 
   .AlignHexagon h3 {
-      /* margin: 40px 80px 0 80px; */
-      text-align: center;
-      margin: 0;
-      margin-top: 30px;
-      margin-left: 25px;
-      padding: 0 20px;
-      width: 80px;
+      padding: 0 5px;
   }
   .AlignHexagon p {
       margin: 10px;
@@ -142,6 +148,12 @@ border-top: 37.53px solid #64C7CC;
       line-height: 1.3em;
       width: 150px;
       text-align: center;
+  }
+
+  .AlignHexagon p, .AlignHexagon h3{
+    width: fit-content;
+    max-width: 200px;
+    margin: 5px auto;
   }
 
   .Icons {
@@ -156,8 +168,12 @@ border-top: 37.53px solid #64C7CC;
       width: 80px; 
       height: 46.19px;
       background-color: #64C7CC;
-      margin: 23.09px 50px;
+      margin: 20px auto;
       animation: none;
+    }
+
+    .AlignHexagon .Hexagon{
+      margin: 35px auto;
     }
     
     .Hexagon:before,
@@ -179,6 +195,7 @@ border-top: 37.53px solid #64C7CC;
       width: 0;
       border-top: 23.09px solid #64C7CC;
     }
+    
 }
 
 @media (max-width: 375px){

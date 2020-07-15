@@ -8,7 +8,15 @@ import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 class Layout extends Component {
     state = {
         showSideDrawer: false,
-        showAboutDrawer: false
+        showAboutDrawer: false,
+        navScrolled: 'none'
+    }
+
+    componentDidMount(){
+        document.addEventListener("scroll", () => {
+            const scrolled = window.scrollY < 100 ? "none" : "scrolled";
+            this.setState({ navScrolled: scrolled });
+          });
     }
 
     aboutDrawerClosedHandler = () => {
@@ -36,7 +44,7 @@ class Layout extends Component {
     render () {
         return (
             <Auxiliary>
-                <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} aboutToggleClicked={this.aboutDrawerToggleHandler} />
+                <Toolbar navScrolled={this.state.navScrolled} drawerToggleClicked={this.sideDrawerToggleHandler} aboutToggleClicked={this.aboutDrawerToggleHandler} />
                 <SideDrawer
                     open={this.state.showSideDrawer}
                     closed={this.sideDrawerClosedHandler} />
