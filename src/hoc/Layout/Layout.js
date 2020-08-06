@@ -35,7 +35,7 @@ class Layout extends Component {
     }
 
     sideDrawerToggleHandler = () => {
-        console.log(document.getElementById('Burger').classList.add('active'));
+        // console.log(document.getElementById('Burger').classList.add('active'));
         this.setState( ( prevState ) => {
             return { showSideDrawer: !prevState.showSideDrawer };
         } );

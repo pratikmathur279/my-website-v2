@@ -41,6 +41,13 @@
     font-weight: 100;
 }
 
+@media screen and (max-width: 800px){
+    .Container .Content{
+        padding-left: 50px;
+        max-width: calc(100% - 100px);
+    }
+}
+
 .Container .heading {
     display: block;
     /* position: absolute; */

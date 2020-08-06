@@ -18,7 +18,7 @@ const Homepage = (props) => {
                 <HomePageContainer/>
             </div>
             
-            <LazyLoad height={400}>
+            <LazyLoad height={450}>
                 <HexagonsContainer {...props} />
             </LazyLoad>
             
