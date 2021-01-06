@@ -5,7 +5,7 @@
     position: relative;
 }
 
-.Homepage p{
+.HomepageContainer p{
     display: block;
     margin: 0 auto; 
     width: 300px;
@@ -58,7 +58,95 @@
     /* background-repeat: no-repeat; */
 }
 
-  @media screen and (max-width: 500px){
+.DescriptionContainer{
+    width: 100%;
+    margin: auto;
+    position: relative;
+    height: 100%;
+    overflow: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    /* background: url("../../assets/images/cover.png") center; */
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    padding: 0px;
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -moz-animation: fadein 1s; /* Firefox */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera */
+}
+
+.DescriptionWrapper{
+    width: 80%;
+    margin: 120px auto 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.DescriptionImage{
+    width: 45%;
+    display: block;
+    height: auto;
+}
+
+.DescriptionImage img{
+    width: 100%;
+}
+
+.Description{
+    width: 40%;
+    margin: auto;
+    height: fit-content;
+    text-align: left;
+    padding: 20px 10px 30px;
+}
+
+.Description h1 {
+    margin: 10px 0;
+    font-size: 2.1em;
+}
+
+.Description p{
+    display: block;
+    margin: 0 auto; 
+    color: black;
+    line-height: 2em;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+@media screen and (max-width: 900px){
+    .DescriptionContainer{
+        width: 100%;
+        padding: 0px;
+    }
+
+    .DescriptionImage{
+        width: 100%;
+        max-width: 450px;
+        margin: auto;
+    }
+
+    .Description{
+        width: 100%;
+        max-width: 450px;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .Description h1{
+        font-size: 1.2em;
+    }
+
+    .DescriptionWrapper{
+        flex-direction: column;
+        margin: 40px auto 10px;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px){
     .HomePageContainer {
         height: 70vh;
         min-height: initial;

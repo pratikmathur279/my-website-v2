@@ -22,9 +22,9 @@ class AboutPageBuilder extends Component {
                 'https://my-website-photos.s3.amazonaws.com/IMG_0509.JPEG',
                 'https://my-website-photos.s3.amazonaws.com/IMG_2171.JPG',
                 'https://my-website-photos.s3.amazonaws.com/IMG_20200315.JPG',
-                'https://my-website-photos.s3.amazonaws.com/IMG_0267.JPG',
+                'https://my-website-photos.s3.amazonaws.com/IMG_0010.JPG',
+                'https://my-website-photos.s3.amazonaws.com/IMG_0267.jfif',
                 'https://my-website-photos.s3.amazonaws.com/IMG_0268.JPG',
-                'https://my-website-photos.s3.amazonaws.com/IMG_0909.jpg',
                 'https://my-website-photos.s3.amazonaws.com/IMG_2771.jpg'
             ]
         };
