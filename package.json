@@ -48,7 +48,7 @@
     "lodash": "^4.17.15",
     "material-design-icons": "^3.0.1",
     "material-icons-react": "^1.0.4",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "mime": "^1.6.0",
     "node-sass": "^4.13.1",
     "object-assign": "4.1.1",
