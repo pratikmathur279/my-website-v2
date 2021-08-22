@@ -75,3 +75,25 @@
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
+.ProjectRow{
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    max-width: 1550px;
+    margin: 50px auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 500px){
+    .ProjectRow{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ProjectHeader {
+        display: block;
+        margin: 0 auto;
+    }
+}

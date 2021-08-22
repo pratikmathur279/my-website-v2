@@ -12,10 +12,10 @@ import HexagonsContainer from '../UI/HexagonsContainer/HexagonsContainer';
 
 const Homepage = (props) => {
 
-    return(
+    return (
         <div className={classes.Homepage}>
             <div className={classes.HomePageContainer}>
-                <HomePageContainer/>
+                <HomePageContainer />
             </div>
 
             <div className={classes.DescriptionContainer}>
@@ -29,20 +29,20 @@ const Homepage = (props) => {
                         <p>I'm passionate about web development and bringing ideas to life. My primary focus is building robust web applications and software applications by building a great user experience. If you want to learn more about me, pick up the phone and give me a call (or email).</p>
                     </div>
                 </div>
-                
+
             </div>
-            
+
             <LazyLoad height={650}>
                 <HexagonsContainer {...props} />
             </LazyLoad>
-            
+
             <LazyLoad height={800}>
                 <div className={classes.Container2}>
                     <div className={classes.IntroContainer}>
-                        <IntroContainer image={props.image}/>
+                        <IntroContainer image={props.image} />
                     </div>
                     <div className={classes.SkillsContainer}>
-                        <SkillsBar skills={props.skills}/>
+                        <SkillsBar skills={props.skills} />
                     </div>
                 </div>
             </LazyLoad>

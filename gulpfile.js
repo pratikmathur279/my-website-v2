@@ -1,71 +1,97 @@
-const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
-const pngquant = require('imagemin-pngquant');
-const imageResize = require('gulp-image-resize');
+const {
+    src,
+    dest,
+    parallel,
+    series,
+    watch
+} = require('gulp');
+
+// Load plugins
+
+const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
-const connect = require('gulp-connect-php');
-const browserSync = require('browser-sync');
 const autoprefixer = require('gulp-autoprefixer');
+const cssnano = require('gulp-cssnano');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const sourcemaps = require('gulp-sourcemaps');
-const browserify = require('browserify');
-const source =  require('vinyl-source-stream');
-const babelify = require('babelify');
-const buffer = require('vinyl-buffer');
+const clean = require('gulp-clean');
+const imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
+const browsersync = require('browser-sync').create();
 
-var config = {
-    sassPath: './resources/sass',
-    componentsPath: './resources/javascript/marketing',
-    jsDist: './public/javascript/',
-    cssDist: './public/css/'
-};
+// Clean assets
 
-gulp.task('imagemin', ()=> {
-    return gulp.src('./resources/images/*.png')
-	.pipe(imagemin({
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngquant()]
-	}))
-	.pipe(gulp.dest('public/images/'));
-});
+function clear() {
+    return src('./assets/*', {
+        read: false
+    })
+        .pipe(clean());
+}
 
-gulp.task('connect', () => {
-    browserSync({
-        port: 3456,
-        proxy: 'portal.test'
+// JS function 
+
+function js() {
+    const source = './src/js/*.js';
+
+    return src(source)
+        .pipe(changed(source))
+        .pipe(concat('bundle.js'))
+        .pipe(uglify())
+        .pipe(rename({
+            extname: '.min.js'
+        }))
+        .pipe(dest('./assets/js/'))
+        .pipe(browsersync.stream());
+}
+
+// CSS function 
+
+function css() {
+    const source = './src/sass/app.scss';
+
+    return src(source)
+        .pipe(changed(source))
+        .pipe(sass())
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(rename({
+            extname: '.min.css'
+        }))
+        .pipe(cssnano())
+        .pipe(dest('./assets/css/'))
+        .pipe(browsersync.stream());
+}
+
+// Optimize images
+
+function img() {
+    return src('./src/img/*')
+        .pipe(imagemin())
+        .pipe(dest('./assets/img'));
+}
+
+// Watch files
+
+function watchFiles() {
+    watch('./src/sass/*', css);
+    watch('./src/javascript/*', js);
+    watch('./src/assets/*', img);
+}
+
+// BrowserSync
+
+function browserSync() {
+    browsersync.init({
+        server: {
+            baseDir: './'
+        },
+        port: 3000
     });
-});
+}
 
-//import style sheet partials into app.scss.
-gulp.task('mainStyles', () => {
-   gulp.src(config.sassPath+'/app.scss')
-       .pipe(sourcemaps.init())
-       .pipe(sass({outputStyle: "compressed"}).on('error', sass.logError))
-       .pipe(sourcemaps.write())
-       .pipe(gulp.dest(config.cssDist))
-       .pipe(browserSync.stream());  
-});
+// Tasks to define the execution of the functions simultaneously or in series
 
-//watch sass files for changes
-gulp.task('watch:sass', ['connect'], () => {
-   gulp.watch(config.sassPath+'/*.scss', ['mainStyles']);    
-});
-
-gulp.task('react', ()=> {
-    browserify(config.marketingPath+'/main.js')
-    .transform('babelify', {presets: ["es2015", "react"]})
-    .bundle()
-    .on('error', console.error.bind(console))
-    .pipe(source('portal.js'))
-    .pipe(buffer())
-    .pipe(gulp.dest(config.jsDist));
-});
-
-gulp.task('watch:react', () => {
-   gulp.watch(config.marketingPath+"/**/*", ['react']);
-});
-
-gulp.task('default', ['connect', 'watch:react', 'watch:sass']);
+exports.watch = parallel(watchFiles, browserSync);
+exports.default = series(clear, parallel(js, css, img));

@@ -14,24 +14,24 @@ import ResumeBuilder from './containers/ResumeBuilder/ResumeBuilder.js';
 import Footer from '../src/components/UI/Footer/Footer';
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <HashRouter>
-      <div classes={classes.App}>
-        
-        <Layout/>
-        <Switch>
-            <Route exact path="/" component={HomepageBuilder}/>
-            <Route path="/about" component={AboutPageBuilder}/>
-            <Route path="/resume" component={ResumeBuilder} />
-            <Route path="/projects" component={ProjectsPageBuilder}/>
-            <Route path="/contact" component={ContactPageBuilder}/>
-        </Switch>
+        <div classes={classes.App}>
 
-        <Footer />
-      </div>
+          <Layout />
+          <Switch>
+            <Route exact path="/" component={HomepageBuilder} />
+            <Route path="/about" component={AboutPageBuilder} />
+            <Route path="/resume" component={ResumeBuilder} />
+            <Route path="/projects" component={ProjectsPageBuilder} />
+            <Route path="/contact" component={ContactPageBuilder} />
+          </Switch>
+
+          <Footer />
+        </div>
       </HashRouter>
-      
+
     );
   }
 }

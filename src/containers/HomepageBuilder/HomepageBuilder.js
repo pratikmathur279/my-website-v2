@@ -5,64 +5,64 @@ import Homepage from '../../components/Homepage/Homepage';
 import Actions from '../../actions/Actions';
 
 class HomepageBuilder extends Component {
-    constructor() {
-        super();
-        this.state = {
-          isFlipped: false,
-          name: 'Pratik Mathur',
-          hexagons: [
-              {id:0, name: 'speedometer', title: 'Fast', desc: 'Fast load times and lag free interaction'}, {id:1, name: 'laptop', title: 'Responsive', desc: 'My layouts will work on any device.'}, {id:2, name: 'lightbulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.'}, {id:3, name: 'flight', title: 'Dynamic', desc: 'I love making dynamic websites'}
-            ],
-          skills: [],
-        description: {
-            description1: "Click on the images to view details"
-        }
-        };
-        this.actions = new Actions();
-        this.handleClick = this.handleClick.bind(this);
+  constructor() {
+    super();
+    this.state = {
+      isFlipped: false,
+      name: 'Pratik Mathur',
+      hexagons: [
+        { id: 0, name: 'speedometer', title: 'Fast', desc: 'Fast load times and lag free interaction' }, { id: 1, name: 'laptop', title: 'Responsive', desc: 'My layouts will work on any device.' }, { id: 2, name: 'lightbulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.' }, { id: 3, name: 'flight', title: 'Dynamic', desc: 'I love making dynamic websites' }
+      ],
+      skills: [],
+      description: {
+        description1: "Click on the images to view details"
       }
+    };
+    this.actions = new Actions();
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-      componentWillMount(){
-          let state = Object.assign({}, this.state);
-          // let split = this.createRows(state.hexagons);
-          // state.hexagons = split;
-          this.actions.getSkills(state.skills, (data)=> {
-            state.skills = data;
-            this.setState(state);
-          });
-            
+  componentWillMount() {
+    let state = Object.assign({}, this.state);
+    // let split = this.createRows(state.hexagons);
+    // state.hexagons = split;
+    this.actions.getSkills(state.skills, (data) => {
+      state.skills = data;
+      this.setState(state);
+    });
+
+  }
+
+  handleClick(e) {
+    // e.preventDefault();
+    console.log("clicked " + e.target.id);
+    var temp = this.state.projects;
+    for (var i in temp) {
+      if (temp[i].index == e.target.id) {
+        temp[i].isFlipped = !temp[i].isFlipped;
+
+        this.setState({ projects: temp });
+        // this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
       }
-
-      handleClick(e) {
-        // e.preventDefault();
-        console.log("clicked "+e.target.id );
-        var temp = this.state.projects;
-        for(var i in temp){
-            if(temp[i].index == e.target.id){
-                temp[i].isFlipped = !temp[i].isFlipped;
-
-                this.setState({projects: temp});
-                // this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
-            }
-        }
-      }
-
-      createRows(original){
-        var arr = [];
-        while(original.length > 0){
-            var split = original.splice(0,2);
-            arr.push(split);
-        }
-        return arr;
-      }
-
-    render () {
-        return (
-            <Auxiliary>
-                <Homepage image='/images/pratik.jpg' alt={this.state.name} hexagons={this.state.hexagons} skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
-            </Auxiliary>
-        );
     }
+  }
+
+  createRows(original) {
+    var arr = [];
+    while (original.length > 0) {
+      var split = original.splice(0, 2);
+      arr.push(split);
+    }
+    return arr;
+  }
+
+  render() {
+    return (
+      <Auxiliary>
+        <Homepage image='/images/pratik.jpg' alt={this.state.name} hexagons={this.state.hexagons} skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
+      </Auxiliary>
+    );
+  }
 }
 
 export default HomepageBuilder;

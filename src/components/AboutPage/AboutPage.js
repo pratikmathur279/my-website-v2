@@ -24,9 +24,17 @@ const AboutPage = (props) => {
             <div className={classes.InstagramFeed}>
                 <h1>My Instagram Feed</h1>
                 <div className={classes.Feed}>
-                    {props.state.instagram_feed.length > 0 ?
+                    <div className={classes.Photo}><img alt="instagram" src="/images/instagram/IMG_2171.jfif" /></div>
+                    <div className={classes.Photo}><img alt="instagram" src="/images/instagram/IMG_0265.jpg" /></div>
+                    <div className={classes.Photo}><img alt="instagram" src="/images/instagram/IMG_0011.jpg" /></div>
+                    <div className={classes.Photo}><img alt="instagram" src="/images/instagram/IMG_2367.jpg" /></div>
+                    <div className={classes.Photo}><img alt="instagram" src="/images/instagram/IMG_0267.jfif" /></div>
+                    <div className={classes.Photo}><img alt="instagram" src="/images/instagram/IMG_0010.jfif" /></div>
+                    <div className={classes.Photo}><img alt="instagram" src="/images/instagram/IMG_0268.jfif" /></div>
+                    <div className={classes.Photo}><img alt="instagram" src="/images/instagram/IMG_2771.jpg" /></div>
+                    {/* {props.state.instagram_feed.length > 0 ?
                         props.state.instagram_feed.map(buildInstagram)
-                    : null}
+                    : null} */}
                 </div>
 
                 <div className={classes.FollowInstagram}>
