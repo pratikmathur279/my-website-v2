@@ -10,7 +10,7 @@ html {
 body, html {
     width: 100%;
     margin: 0;
-	overflow-y: auto;
+	// overflow-y: auto;
     font-family: 'Poppins Regular';
 	color: white;
 }
@@ -1104,7 +1104,7 @@ body, html {
 			background-position: calc(82%);
 		}
 		@media screen and (max-width: $tabletBreak){
-			// background-position: calc(26%);
+			background-position: calc(90%);
 			min-height: auto;
 			height: 85vh;
 		}

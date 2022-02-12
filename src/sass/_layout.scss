@@ -18,8 +18,10 @@
     -ms-transition: background-color 200ms linear;
     transition: background-color 200ms linear;
     @media screen and (max-width: $tabletBreak){
-        background-color: $lightnavy;
-    }    
+        &.Scrolled{
+            background-color: $lightnavy;
+        }
+    }
     @media screen and (min-width: $tabletBreak){
         &.Scrolled{
             background-color: white;

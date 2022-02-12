@@ -36,10 +36,10 @@ class Layout extends Component {
     }
 
     elementScrollData = () => {
-        if (!isMobile) {
-            const scrolled = window.scrollY < 100 ? "none" : "scrolled";
-            this.setState({ navScrolled: scrolled });
-        }
+        // if (!isMobile) {
+        const scrolled = window.scrollY < 100 ? "none" : "scrolled";
+        this.setState({ navScrolled: scrolled });
+        // }
     }
 
     render() {
