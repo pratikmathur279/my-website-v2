@@ -9,7 +9,8 @@ var upload = multer();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 import express from "express";
-import { DynamoDBClient, ListTablesCommand } from "@aws-sdk/client-dynamodb";
+
+// import { DynamoDBClient, ListTablesCommand } from "@aws-sdk/client-dynamodb";
 
 import config from './config/config.js';
 
@@ -47,9 +48,9 @@ app.use(cors({
 // scheduler();
 
 // establish dynamodb connection
-(async () => {
-	const client = new DynamoDBClient({ region: "us-east-1" });
-})();
+// (async () => {
+// 	const client = new DynamoDBClient({ region: "us-east-1" });
+// })();
 
 // import api routes here
 
