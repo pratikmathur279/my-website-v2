@@ -5,37 +5,37 @@ import ContactPageContainer from '../../components/Contact/ContactPageContainer'
 import Actions from '../../actions/Actions';
 
 class ContactPageBuilder extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
             formControls: {
                 email: {
-                  value: ''
+                    value: ''
                 },
                 name: {
-                  value: ''
+                    value: ''
                 },
                 subject: {
                     value: ''
                 },
                 message: {
-                  value: ''
+                    value: ''
                 }
             },
             initialState: {
                 email: {
                     value: ''
-                  },
-                  name: {
+                },
+                name: {
                     value: ''
-                  },
-                  subject: {
-                      value: ''
-                  },
-                  message: {
+                },
+                subject: {
                     value: ''
-                  }
+                },
+                message: {
+                    value: ''
+                }
             },
             errors: {},
             emailSent: false
@@ -47,13 +47,13 @@ class ContactPageBuilder extends Component {
         this.actions = new Actions();
     }
 
-    componentDidMount(){
+    componentDidMount() {
         let state = Object.assign({}, this.state);
         this.setState(state);
     }
 
     onClick() {
-        if(this.valid()){
+        if (this.valid()) {
             let state = Object.assign({}, this.state);
             let emailObject = {
                 name: state.formControls.name.value,
@@ -61,10 +61,10 @@ class ContactPageBuilder extends Component {
                 subject: state.formControls.subject.value,
                 message: state.formControls.message.value
             }
-            this.actions.sendEmail(emailObject, (sent)=>{
-                if(sent){
-                    this.actions.sendContact(emailObject, (data)=> {
-                        if(data){
+            this.actions.sendEmail(emailObject, (sent) => {
+                if (sent) {
+                    this.actions.sendContact(emailObject, (data) => {
+                        if (data) {
                             state.formControls = state.initialState;
                             state.emailSent = true;
                             this.setState(state);
@@ -72,43 +72,41 @@ class ContactPageBuilder extends Component {
                     });
                 }
             });
-
-            
         }
-        else{
+        else {
             console.log("Error");
         }
     }
 
-    onChange(e){
+    onChange(e) {
         const name = e.target.name;
         const value = e.target.value;
-        
+
         let state = Object.assign({}, this.state);
         state.formControls[name].value = value;
         this.setState(state);
     }
 
-    valid(){
+    valid() {
         let state = Object.assign({}, this.state);
-        state.errors = {length: 0};
-        
-        if(state.formControls.name.value === ''){
+        state.errors = { length: 0 };
+
+        if (state.formControls.name.value === '') {
             state.errors.name = "Please enter a name.";
             state.errors.length += 1;
         }
 
-        if(state.formControls.email.value === ""){
+        if (state.formControls.email.value === "") {
             state.errors.email = "Please enter an email.";
             state.errors.length += 1;
         }
 
-        if(state.formControls.subject.value === ""){
+        if (state.formControls.subject.value === "") {
             state.errors.subject = "Please enter a subject.";
             state.errors.length += 1;
         }
 
-        if(state.formControls.message.value === ""){
+        if (state.formControls.message.value === "") {
             state.errors.message = "Please enter a message.";
             state.errors.length += 1;
         }
@@ -117,12 +115,11 @@ class ContactPageBuilder extends Component {
         return state.errors.length === 0;
     }
 
-    render () {
+    render() {
         return (
             <Auxiliary>
                 <div>
                     <ContactPageContainer emailSent={this.state.emailSent} errors={this.state.errors} formControls={this.state.formControls} onChange={this.onChange} onClick={this.onClick} />
-                    
                 </div>
             </Auxiliary>
         );

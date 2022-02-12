@@ -1,54 +1,56 @@
 import React, { Component } from 'react';
 
+import { isMobile } from 'react-device-detect';
+
 import Auxiliary from '../Auxiliary';
-import classes from './Layout.module.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {
-    state = {
-        showSideDrawer: false,
-        showAboutDrawer: false,
-        navScrolled: 'none'
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showSideDrawer: false,
+            showAboutDrawer: false,
+            navScrolled: 'none'
+        }
+
+        this.sideDrawerClosedHandler = this.sideDrawerClosedHandler.bind(this);
+        this.sideDrawerToggleHandler = this.sideDrawerToggleHandler.bind(this);
+        this.elementScrollData = this.elementScrollData.bind(this);
     }
 
-    componentDidMount(){
-        document.addEventListener("scroll", () => {
-            const scrolled = window.scrollY < 100 ? "none" : "scrolled";
-            this.setState({ navScrolled: scrolled });
-          });
-    }
-
-    aboutDrawerClosedHandler = () => {
-        this.setState({ showAboutDrawer: false });
-    }
-
-    aboutDrawerToggleHandler = () => {
-        // alert("aboutDrawerToggle");
-        this.setState( (prevState) => {
-            return {showAboutDrawer: !prevState.showAboutDrawer}
-        });
+    componentDidMount() {
+        window.addEventListener('scroll', this.elementScrollData, true);
     }
 
     sideDrawerClosedHandler = () => {
-        this.setState( { showSideDrawer: false } );
+        this.setState({ showSideDrawer: false });
     }
 
     sideDrawerToggleHandler = () => {
-        // console.log(document.getElementById('Burger').classList.add('active'));
-        this.setState( ( prevState ) => {
+        this.setState((prevState) => {
             return { showSideDrawer: !prevState.showSideDrawer };
-        } );
+        });
     }
 
-    render () {
+    elementScrollData = () => {
+        if (!isMobile) {
+            const scrolled = window.scrollY < 100 ? "none" : "scrolled";
+            this.setState({ navScrolled: scrolled });
+        }
+    }
+
+    render() {
         return (
             <Auxiliary>
-                <Toolbar navScrolled={this.state.navScrolled} drawerToggleClicked={this.sideDrawerToggleHandler} aboutToggleClicked={this.aboutDrawerToggleHandler} />
+                <Toolbar navScrolled={this.state.navScrolled} drawerToggleClicked={this.sideDrawerToggleHandler} />
                 <SideDrawer
                     open={this.state.showSideDrawer}
-                    closed={this.sideDrawerClosedHandler} />
-                <main className={classes.Content}>
+                    closed={this.sideDrawerClosedHandler}
+                />
+                <main className="Content">
                     {this.props.children}
                 </main>
             </Auxiliary>

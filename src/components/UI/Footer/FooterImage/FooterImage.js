@@ -1,15 +1,15 @@
 import React from 'react';
 
-import classes from './FooterImage.module.css';
+import ReactIcons from '../../../common/reactIcons';
 
-const footerImage = ( props ) => (
-    <div className={classes.footerImage}>
-        <a href={props.url} target={props.target}>
-            <img 
-                src={props.src}
-                alt={props.alt} />
+const footerImage = (props) => {
+    return (
+        <div className="footerImage">
+            <a href={props.url} target={props.target}>
+                <ReactIcons id="CustomTag" size={props.size} color={props.color} icon={props.icon} background="#fff" />
             </a>
-    </div>
-);
+        </div>
+    );
+}
 
 export default footerImage;

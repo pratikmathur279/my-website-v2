@@ -1,13 +1,12 @@
 import React from 'react';
-import classes from './Image.module.css';
 
-const Image = ( props ) => (
-    <div className={classes.Image}>
-        <img 
+const Image = (props) => (
+    <div className="image">
+        <img
             src={props.src}
             alt={props.alt}>
         </img>
-    </div>
+    </div >
 );
 
 export default Image;

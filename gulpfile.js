@@ -1,97 +1,67 @@
-const {
-    src,
-    dest,
-    parallel,
-    series,
-    watch
-} = require('gulp');
+import gulp from 'gulp';
+import imagemin from 'gulp-imagemin';
+import pngquant from 'imagemin-pngquant';
+import gulpSass from 'gulp-sass'
+import dartSass from 'sass'
+const sass = gulpSass(dartSass)
 
-// Load plugins
+import browserSync from 'browser-sync';
+import sourcemaps from 'gulp-sourcemaps';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 
-const uglify = require('gulp-uglify');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const cssnano = require('gulp-cssnano');
-const concat = require('gulp-concat');
-const clean = require('gulp-clean');
-const imagemin = require('gulp-imagemin');
-const changed = require('gulp-changed');
-const browsersync = require('browser-sync').create();
+var config = {
+    sassPath: './src/sass',
+    jsPath: './src',
+    jsDist: './public/javascript/',
+    cssDist: './public/css/'
+};
 
-// Clean assets
-
-function clear() {
-    return src('./assets/*', {
-        read: false
-    })
-        .pipe(clean());
-}
-
-// JS function 
-
-function js() {
-    const source = './src/js/*.js';
-
-    return src(source)
-        .pipe(changed(source))
-        .pipe(concat('bundle.js'))
-        .pipe(uglify())
-        .pipe(rename({
-            extname: '.min.js'
+gulp.task('imagemin', () => {
+    return gulp.src('./src/images/*.png')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }],
+            use: [pngquant()]
         }))
-        .pipe(dest('./assets/js/'))
-        .pipe(browsersync.stream());
-}
+        .pipe(gulp.dest('public/images/'));
+});
 
-// CSS function 
-
-function css() {
-    const source = './src/sass/app.scss';
-
-    return src(source)
-        .pipe(changed(source))
-        .pipe(sass())
-        .pipe(autoprefixer({
-            overrideBrowserslist: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(rename({
-            extname: '.min.css'
-        }))
-        .pipe(cssnano())
-        .pipe(dest('./assets/css/'))
-        .pipe(browsersync.stream());
-}
-
-// Optimize images
-
-function img() {
-    return src('./src/img/*')
-        .pipe(imagemin())
-        .pipe(dest('./assets/img'));
-}
-
-// Watch files
-
-function watchFiles() {
-    watch('./src/sass/*', css);
-    watch('./src/javascript/*', js);
-    watch('./src/assets/*', img);
-}
-
-// BrowserSync
-
-function browserSync() {
-    browsersync.init({
-        server: {
-            baseDir: './'
-        },
-        port: 3000
+gulp.task('connect', () => {
+    browserSync({
+        port: 3010,
+        proxy: 'localhost:3010'
     });
-}
+});
 
-// Tasks to define the execution of the functions simultaneously or in series
+//import style sheet partials into app.scss.
+gulp.task('mainStyles', () => {
+    return gulp.src(config.sassPath + '/app.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ outputStyle: "compressed" }).on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(config.cssDist))
+        .pipe(browserSync.stream());
+});
 
-exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, parallel(js, css, img));
+//watch sass files for changes
+gulp.task('watch:sass', () => {
+    gulp.watch(config.sassPath + '/*.scss', gulp.series('mainStyles'));
+});
+
+gulp.task('react', () => {
+    browserify(config.jsPath + '/main.js')
+        .transform('babelify', { presets: ["es2015", "react"] })
+        .bundle()
+        .on('error', console.error.bind(console))
+        .pipe(source('portal.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest(config.jsDist));
+});
+
+gulp.task('watch:react', () => {
+    gulp.watch(config.jsPath + "/**/*", ['react']);
+});
+
+gulp.task('default', gulp.series('connect', 'watch:react', 'watch:sass'));

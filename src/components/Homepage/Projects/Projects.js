@@ -10,22 +10,24 @@ import ProjectBack from './Project/ProjectBack';
 
 const projects = (props) => {
 
-    return(
-        <div className={classes.Projects}>
-            <div className={classes.ProjectDiv}>
-                <div className={classes.ProjectsContainer}>
+    return (
+        <div className="Projects">
+            <div className="ProjectDiv">
+                <div className="ProjectsContainer">
 
-                {props.projects.map((project, index) => (
-                    
-                    <ReactCardFlip isFlipped={project.isFlipped}>
-                        <ProjectFront key="front" id={project.index} mouseClick={props.mouseClick} src={project.url} alt={project.name}></ProjectFront>
-                        <ProjectBack key="back" id={project.index} mouseClick={props.mouseClick} heading={project.heading} desc={project.description}></ProjectBack>
-                    </ReactCardFlip>
+                    {props.projects.map((project, index) => (
+
+                        <ReactCardFlip isFlipped={project.isFlipped">
+                    < ProjectFront key = "front" id = { project.index } mouseClick = { props.mouseClick } src = { project.url } alt = {
+                        project.name"></ProjectFront>
+                            <ProjectBack key = "back" id = { project.index
+                    } mouseClick = { props.mouseClick } heading = { project.heading } desc = { project.description } ></ProjectBack >
+            </ReactCardFlip >
                 ))}
 
-                </div>
-            </div>
-        </div>
+        </div >
+            </div >
+        </div >
     ) 
 }
 

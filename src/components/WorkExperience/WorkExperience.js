@@ -1,11 +1,10 @@
 import React from 'react';
 
-import classes from './WorkExperience.module.css';
 import Experience from './Experience/Experience';
 import Loading from '../UI/Loading/Loading';
 
 const WorkExperience = (props) => {
-    
+
     const buildColumns = (col, i) => {
         let heading = (i === 0) ? 'Day-To-Day Comfort' : 'Experience with';
         return (
@@ -17,47 +16,47 @@ const WorkExperience = (props) => {
     }
 
     const buildTech = (tech) => {
-        return(
+        return (
             <li>{tech.name}</li>
         )
     }
 
     const buildExperiences = (exp) => {
         return (
-            <div key={exp.id} className={classes.experience} >
+            <div key={exp.id} className="content" >
                 <Experience data={exp} />
             </div>
         );
     }
 
     return (
-        <div className={classes.WorkExperience}>
-            <div className={classes.Container}>
-                <div className={classes.Content}>
-                    <div className={classes.heading}>
+        <div className="work-experience-wrapper">
+            <div className="header-container" >
+                <div className="Content">
+                    <div className="heading">
                         <h3>Dig a little deeper.</h3>
                     </div>
-                    <div className={classes.download}>
-                        <a href="https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf" target="_blank" className={classes.button}>Download Resume →</a>
+                    <div className="download">
+                        <a href="https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf" target="_blank" className="button">Download Resume →</a>
                     </div>
                 </div>
+            </div >
 
-            </div>
             {props.loading && <Loading />}
-            <div className={classes.Section}>
+            <div className="Section" >
                 <h2>Technologies</h2>
-                <div className={classes.TechnologyRow}>
+                <div className="content-row TechnologyRow">
                     {props.technology.map(buildColumns)}
                 </div>
-            </div>
-            <div className={classes.Section}>
+            </div >
+            <div className="Section">
                 <h2>Work Experience</h2>
-                <div className={classes.WorkExperienceRow}>
+                <div className="content-row">
                     {props.experience.map(buildExperiences)}
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
 

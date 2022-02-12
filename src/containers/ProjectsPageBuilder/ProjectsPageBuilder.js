@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Auxiliary from '../../hoc/Auxiliary';
 import ProjectInformation from '../../components/Projects/ProjectInformation/ProjectInformation';
-import classes from './ProjectsPageBuilder.module.css';
 
 import Project from '../../components/Projects/Project/Project';
 
@@ -77,19 +76,21 @@ class ProjectsPageBuilder extends Component {
         }
         return (
             <Auxiliary>
-                <div className={classes.ProjectsContainer}>
-                    <div className={classes.title}>
-                        <h3 className={classes.ProjectsHeader}>Projects</h3>
+                <div className="projects-wrapper">
+                    <div className="ProjectsContainer">
+                        <div className="title">
+                            <h3 className="ProjectsHeader">Projects</h3>
+                        </div>
+                    </div>
+                    <Modal show={this.state.showProject} modalClosed={this.closeModalHandler}>
+                        <ProjectInformation showProject={this.state.showProject} card={this.state.selected} />
+                    </Modal>
+
+                    <div className="ProjectRow">
+                        {this.state.projects.map(buildRow)}
                     </div>
                 </div>
-                <Modal show={this.state.showProject} modalClosed={this.closeModalHandler}>
-                    <ProjectInformation showProject={this.state.showProject} card={this.state.selected} />
-                </Modal>
-
-                <div className={classes.ProjectRow}>
-                    {this.state.projects.map(buildRow)}
-                </div>
-            </Auxiliary>
+            </Auxiliary >
         );
     }
 }
