@@ -26,7 +26,7 @@ class Actions {
     }
 
     sendEmail(email, callback) {
-        // console.log(email);
+        console.log(email);
         axios.post('/api/send-email', email, { crossDomain: true })
             .then((res, err) => {
                 if (!err) {
