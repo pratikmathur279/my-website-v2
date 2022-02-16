@@ -6,7 +6,6 @@
 	"eslintConfig": {
 		"parser": "babel-eslint"
 	},
-	"proxy": "http://localhost:3010",
 	"dependencies": {
 		"@babel/plugin-transform-object-assign": "^7.16.0",
 		"@testing-library/jest-dom": "^5.15.0",
