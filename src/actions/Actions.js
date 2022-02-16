@@ -27,7 +27,7 @@ class Actions {
 
     sendEmail(email, callback) {
         // console.log(email);
-        axios.post('/api/email/send', email, { crossDomain: true })
+        axios.post('/api/send-email', email, { crossDomain: true })
             .then((res, err) => {
                 if (!err) {
                     console.log("data saved!");
