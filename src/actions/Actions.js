@@ -2,9 +2,7 @@ import axios from 'axios';
 
 class Actions {
     getSkills(skills, callback) {
-        axios('/api/skills', {
-            crossDomain: true
-        })
+        axios('/api/skills')
             .then((res) => {
                 var data = (res.data);
                 //   console.log(data);
@@ -38,9 +36,7 @@ class Actions {
     }
 
     getExperience(experience, callback) {
-        axios('/api/experience', {
-            crossDomain: true
-        })
+        axios('/api/experience')
             .then((res) => {
                 var data = res.data;
                 // console.log(data);
@@ -58,9 +54,7 @@ class Actions {
     }
 
     getProjects(experience, callback) {
-        axios('/api/projects', {
-            crossDomain: true
-        })
+        axios('/api/projects')
             .then((res) => {
                 var data = res.data;
                 // console.log(data);
@@ -70,9 +64,7 @@ class Actions {
     }
 
     getTechnology(tech, callback) {
-        axios('/api/technology', {
-            crossDomain: true
-        })
+        axios('/api/technology')
             .then((res) => {
                 var data = res.data;
                 data.sort((a, b) => (a.index > b.index) ? 1 : -1);
