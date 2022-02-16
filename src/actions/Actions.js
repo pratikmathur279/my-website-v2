@@ -2,7 +2,9 @@ import axios from 'axios';
 
 class Actions {
     getSkills(skills, callback) {
-        axios('/api/skills')
+        axios('/api/skills', {
+            crossDomain: true
+        })
             .then((res) => {
                 var data = (res.data);
                 //   console.log(data);
@@ -13,7 +15,7 @@ class Actions {
 
     sendContact(contact, callback) {
         // console.log(contact);
-        axios.post('https://n6j1yr1b43.execute-api.us-east-1.amazonaws.com/dev/contact', contact, { crossDomain: true })
+        axios.post('/api/contact', contact, { crossDomain: true })
             .then((res, err) => {
                 if (!err) {
                     console.log("data saved!");
@@ -24,8 +26,8 @@ class Actions {
     }
 
     sendEmail(email, callback) {
-        console.log(email);
-        axios.post('/api/send-email', email, { crossDomain: true })
+        // console.log(email);
+        axios.post('/api/email/send', email, { crossDomain: true })
             .then((res, err) => {
                 if (!err) {
                     console.log("data saved!");
@@ -36,7 +38,9 @@ class Actions {
     }
 
     getExperience(experience, callback) {
-        axios('/api/experience')
+        axios('/api/experience', {
+            crossDomain: true
+        })
             .then((res) => {
                 var data = res.data;
                 // console.log(data);
@@ -54,7 +58,9 @@ class Actions {
     }
 
     getProjects(experience, callback) {
-        axios('/api/projects')
+        axios('/api/projects', {
+            crossDomain: true
+        })
             .then((res) => {
                 var data = res.data;
                 // console.log(data);
@@ -64,7 +70,9 @@ class Actions {
     }
 
     getTechnology(tech, callback) {
-        axios('/api/technology')
+        axios('/api/technology', {
+            crossDomain: true
+        })
             .then((res) => {
                 var data = res.data;
                 data.sort((a, b) => (a.index > b.index) ? 1 : -1);
