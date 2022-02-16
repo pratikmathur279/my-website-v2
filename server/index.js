@@ -10,11 +10,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 import express from "express";
 
-// import { DynamoDBClient, ListTablesCommand } from "@aws-sdk/client-dynamodb";
-
 import config from './config/config.js';
 
 // import routes
+import projectsRouter from './routes/projects.js';
+import experiencesRouter from './routes/experiences.js';
+import skillsRouter from './routes/skills.js';
+import technologyRouter from './routes/technology.js';
+import emailRouter from './routes/email.js';
 
 const PORT = process.env.PORT || 3010;
 
@@ -47,12 +50,13 @@ app.use(cors({
 // automated task scheduler
 // scheduler();
 
-// establish dynamodb connection
-// (async () => {
-// 	const client = new DynamoDBClient({ region: "us-east-1" });
-// })();
-
 // import api routes here
+app.use('/', projectsRouter);
+app.use('/', experiencesRouter);
+app.use('/', skillsRouter);
+app.use('/', technologyRouter);
+app.use('/', emailRouter);
+
 
 app.get("/api", (req, res) => {
 	res.json({ message: "My Website" });
