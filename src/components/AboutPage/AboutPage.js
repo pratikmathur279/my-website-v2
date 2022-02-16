@@ -41,25 +41,25 @@ const AboutPage = (props) => {
 				<div className="description-content">
 					<p>A full-stack software engineer with over 4 years of experience.</p>
 					<p>I have maintained, developed and launched multiple projects from scratch, carrying the development of its' back-end and front-end codebases.</p>
-					<p>My current toolset includes Elixir Language & Phoenix Framework, JavaScript & TypeScript (Node.js as well), Ruby & Ruby on Rails, React, Redux, Angular, Kubernetes, Docker and all the other various frameworks, libraries and technologies related to them.</p>
+					<p>My current toolset includes React, Redux, Angular, Vue.js, JavaScript & TypeScript (Node.js as well), PHP Laravel, Kubernetes, Docker and all the other various frameworks, libraries and technologies related to them.</p>
 				</div>
 
 				<div className="front-end-desc">
 					<h4><ReactIcons id="CustomTag" size="24" color="white" icon="BsDisplay" background="#fff" />FRONT-END WEB DEVELOPMENT</h4>
-					<p>I specialize in applications written in both React and Angular. Recently I became also a huge fan of one-way data flow and Redux-like architecture and also typed languages, e.g. TypeScript.</p>
+					<p>I specialize in applications written in both React and Angular.</p>
 					<p>My current experience and skills in front-end includes:</p>
 					<ul>
-						<li>lead TypeScript/JavaScript development: bootstraping, refactoring, improving the structure, reliability, build setup;</li>
+						<li>TypeScript/JavaScript development: bootstraping, refactoring, improving the structure, reliability, build setup;</li>
 						<li>full integration of front-end development using tools like Webpack with features like automatic code reload, code minifications, multiple environments support, CI/CD, Storybook components library, automated testing of accessibility, server-side render and visual snapshots</li>
-						<li>sense of design and UX,</li>
+						<li>sense of system design and UX,</li>
 						<li>huge experience in almost all of the JS ecosystems, by having used in the past many libraries like Next.js, React, Redux, Redux-Observable, RxJS, Angular, Ionic Framework, Backbone, jQuery, Lodash/Underscore and many else.</li>
 					</ul>
 				</div>
 
 				<div className="backend-desc">
 					<h4><ReactIcons id="CustomTag" size="24" color="white" icon="FaCode" background="#fff" />BACKEND WEB DEVELOPMENT</h4>
-					<p>In back-end development, my current stack involves Elixir & Phoenix, NodeJS and nest.js, and Ruby on Rails.</p>
-					<p>Nearly every app I have launched in the past had the back-end done also by me. In order to improve the development speed, performance and reliability, I have changed languages and frameworks already multiple times, from PHP, Ruby to Elixir and Node.js; configured servers using just the shell, then Chef/Ansible, and now Docker and Kubernetes.</p>
+					<p>In back-end development, my current stack involves PHP Laravel, Java, NodeJS and Ruby on Rails.</p>
+					<p>Nearly every app I have launched in the past had the back-end done also by me. In order to improve the development speed, performance and reliability, I have changed languages and frameworks already multiple times, from PHP, Ruby to Elixir and Node.js; configured servers using just the shell, then Apache and wampp, and now Docker and Kubernetes.</p>
 					<ul>
 						<li>splitting the back-end into separate domains and microservices,</li>
 						<li>cooperation with APIs, remote data synchronizations, cloud servers, asynchronous workers,</li>

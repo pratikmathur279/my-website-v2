@@ -627,6 +627,10 @@ body, html {
 				color: white;
 				letter-spacing: 1.3px;
 				cursor: pointer;
+				display: flex;
+				svg{
+					margin: auto 6px;
+				}
 			}
 			
 			.download a:hover{
@@ -643,6 +647,7 @@ body, html {
 			font-weight: 100;
 			letter-spacing: 3px;
 			width: 600px;
+			
 			h3{
 				font-size: 2em !important;
 			}
