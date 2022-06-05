@@ -1,12 +1,12 @@
 import React from 'react';
-import classes from './Loading.module.css';
+import LoadingCircle from '../../../../public/images/LoadingCircle.svg';
 
-const Loading = () => {
+const Loading = (props) => {
     return (
-        // <div className="spinner"></div>
-        <div className="Loading">
-            <img src="./images/loading.gif"></img>
-        </div >
+        <div id="loading-box" >
+            {props.loadingText ? <h1>{props.loadingText}</h1> : null}
+            <LoadingCircle />
+        </div>
     )
 }
 

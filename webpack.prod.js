@@ -47,6 +47,20 @@ var config = {
                     limit: 10 * 1024,
                 }
             },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: "babel-loader"
+                    },
+                    {
+                        loader: "react-svg-loader",
+                        options: {
+                            jsx: true // true outputs JSX tags
+                        }
+                    }
+                ]
+            }
         ]
     }
 };
