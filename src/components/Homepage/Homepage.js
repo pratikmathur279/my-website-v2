@@ -15,6 +15,10 @@ const Homepage = (props) => {
         <div className="Homepage">
             <div className="HomepageContainer">
                 <HomePageContainer image={props.image} />
+
+                <div className='home-mouse'>
+                    <div className='mouse'></div>
+                </div>
             </div>
 
             <div className="descriptionContainer">

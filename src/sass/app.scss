@@ -46,13 +46,39 @@ body, html {
 		width: 100%;
 		margin: auto;
 		position: relative;
-		height: 100%;
-		min-height: 100vh;
+		height: 100vh;
+		min-height: 40rem;
 		overflow: none;
 		text-align: center;
 		font-weight: bold;
 		font-size: 1.2rem;
-		background-color: $lightnavy;
+		background: linear-gradient(to right,rgba(245,245,245, 0.4),rgba(245,245,245,0.4)), url('/images/backgrounds/common-bg.svg');
+		.home-mouse{
+			position: absolute;
+			bottom: 3%;
+			left: 50%;
+			transform: translateX(-50%);
+			.mouse{
+				width: 25px;
+				height: 40px;
+				border: 2px solid $darknavy;
+				border-radius: 60px;
+				position: relative;
+				overflow: hidden;
+				&::before{
+					content: '';
+					width: 5px;
+					height: 5px;
+					position: absolute;
+					top: 7px;
+					left: 50%;
+					transform: translateX(-50%);
+					background-color: $darknavy;
+					border-radius: 50%;
+					animation: wheel 1.2s infinite;
+				}
+			}
+		}
 		.homepage-container{
 			display: block;
 			position: absolute;
@@ -78,6 +104,7 @@ body, html {
 					margin: 20px 0;
 					display: block;
 					line-height: 1.3em;
+					color: $darknavy;
 				}
 				h1{
 					font-size: 4em;
@@ -95,6 +122,20 @@ body, html {
 					font-size: 1.5em;
 					font-family: 'Poppins Light';
 				}
+				.hero{
+					display: flex;
+					gap: 15px;
+					.static-text, .index-module_type__E-SaG{
+						color: #282a39;
+						font-size: 2.2em !important;
+					}
+					@media screen and (max-width: $tabletBreak){
+						gap: 10px;
+						.static-text, .index-module_type__E-SaG{
+							font-size: 1.5em !important;
+						}
+					}
+				}
 				.description{
 					width: 100%;
 					margin: 0;
@@ -102,6 +143,7 @@ body, html {
 					text-align: left;
 					p{
 						display: block;
+						color: $darknavy;
 						line-height: 2em;
 						font-size: 1em;
 						text-align: left;
@@ -113,7 +155,7 @@ body, html {
 			@media screen and (max-width: $tabletBreak){
 				flex-direction: column;
 				width: auto;
-				padding: 160px 30px 50px;
+				padding: 0 30px 50px;
 				height: fit-content;
 				position: relative;
 				.header-content{
@@ -122,10 +164,10 @@ body, html {
 						padding: 0;
 					}
 					h1{
-						font-size: 3em;
+						font-size: 2.4em;
 					}
 					h2{
-						font-size: 1.7em;
+						font-size: 1.6em;
 					}
 					h4{
 						font-size: 1.2em;
@@ -153,7 +195,7 @@ body, html {
 	.descriptionContainer{
 		width: 100%;
 		padding: 100px 0;
-		background-color: $darknavy;
+		background-color: $offwhite;
 		.descriptionWrapper{
 			display: flex;
 			width: 85vw;
@@ -170,6 +212,7 @@ body, html {
 				flex: 1 0 40%;
 				width: 200px;
 				margin: auto 0;
+				color: $darknavy;
 				h1{
 					font-size: 2.4em;
 				}
@@ -195,7 +238,7 @@ body, html {
 		height: fit-content;
 		width: 100%;
 		min-width: fit-content;
-		background-color: $lightnavy;
+		background-color: white;
 		padding: 80px 0;
 		margin: 0px auto;
 		.hexagons-wrapper{
@@ -212,7 +255,7 @@ body, html {
 				position: relative;
 				width: 130px; 
 				height: 75.06px;
-				background-color: $filler;
+				background-color: $orange;
 				margin: 50px 50px 0 50px;
 				animation: flipInX 3s;
 				&::before, &::after{
@@ -224,12 +267,12 @@ body, html {
 				}
 				&::before{
 					bottom: 100%;
-					border-bottom: 37.53px solid $filler;
+					border-bottom: 37.53px solid $orange;
 				}
 				&::after{
 					top: 100%;
 					width: 0;
-					border-top: 37.53px solid $filler;
+					border-top: 37.53px solid $orange;
 				}
 				.Icons {
 					display: block;
@@ -251,14 +294,16 @@ body, html {
 				margin-top: 40px;
 				padding: 10px 15px 0 15px;
 				width: 200px;
+				color: $darknavy;
 			}
 			p {
 				margin: 10px;
-				  padding: 0;
+				padding: 0;
 				font-size: 16px;
 				line-height: 1.3em;
 				width: 200px;
 				text-align: center;
+				color: $darknavy;
 			}
 		}
 		@media (max-width: $tabletBreak){
@@ -275,13 +320,16 @@ body, html {
 		height: fit-content;
 		width: 100%;
 		min-width: fit-content;
-		background-color: $darknavy;
+		background-color: $offwhite;
 		padding: 100px 0;
 		margin: 0px auto;
 		display: flex;
 		flex-direction: row;
 		.IntroContainer {
 			flex: 1 0 50%;
+			.Description{
+				color: $darknavy;
+			}
 		}
 		.SkillsContainer{
 			flex: 1 0 50%;
@@ -299,7 +347,7 @@ body, html {
 					margin-top: 20px;
 					border: 1px hidden #333;
 					.Filler {
-						background: $filler;
+						background: $orange;
 						height: 100%;
 						border-radius: inherit;
 						animation: progressBar 2s ease-in-out;
@@ -412,29 +460,27 @@ body, html {
 	.description{
 		height: fit-content;
 		padding: 100px 140px;
-		background-color: $darknavy;
+		background-color: $offwhite;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		&.backstory{
-			background-color: $lightnavy;
-			// flex-direction: row-reverse;
+			background-color: white;
 		}
-		
 		h3{
 			flex: 1 0 30%;
 			font-size: 2.75em;
+			color: $darknavy;
 		}
 		.description-content {
 			display: block;
 			margin: 0 auto; 
 			width: 100%;
 			padding: 0;   
-			color: black;
+			color: $darknavy;
 			line-height: 2em;
 			font-size: 1em;
-			color: white;
 			font-family: 'Poppins Regular';
 			flex: 1 0 60%;
 		}
@@ -449,7 +495,7 @@ body, html {
 	.technical-desc{
 		height: fit-content;
 		padding: 100px 140px;
-		background-color: $darknavy;
+		background-color: $offwhite;
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
@@ -461,6 +507,7 @@ body, html {
 			width: fit-content;
 			margin: 0 auto;
 			display: block;
+			color: $darknavy;
 			@media screen and (max-width: $tabletBreak){
 				font-size: 1.75em;
 			}
@@ -469,6 +516,8 @@ body, html {
 			display: flex;
 			font-size: 1.75em;
 			margin: 10px 0;
+			color: $darknavy;
+
 			svg{
 				margin: auto 10px auto 0;
 				width: 32px;
@@ -484,6 +533,7 @@ body, html {
 		}
 		.front-end-desc, .backend-desc{
 			margin: 25px 0;
+			color: $darknavy;
 			ul{
 				padding-inline-start: 30px;
 			}
@@ -492,11 +542,9 @@ body, html {
 			display: block;
 			margin: 0 auto; 
 			width: 100%;
-			padding: 0;   
-			color: black;
-			
+			padding: 0;
+			color: $darknavy;
 			font-size: 1em;
-			color: white;
 			font-family: 'Poppins Regular';
 			flex: 1 0 60%;
 		}
@@ -564,7 +612,7 @@ body, html {
 	
 	.FollowInstagram a:hover{
 		background: $lightorange;
-		color: white;
+		color: $darknavy;
 	}
 	
 	a:visited,
@@ -601,7 +649,7 @@ body, html {
 		height: 100vh;
 		overflow: none;
 		align-items: center;
-		background-color: $lightnavy;
+		background: linear-gradient(to right,rgba(245,245,245, 0.4),rgba(245,245,245,0.4)), url('/images/backgrounds/common-bg.svg');
 		background-size: cover;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -624,12 +672,13 @@ body, html {
 				padding: 20px 30px;
 				border: 1px solid $lightorange;
 				font-size: 1.2em;
-				color: white;
+				color: $darknavy;
 				letter-spacing: 1.3px;
 				cursor: pointer;
 				display: flex;
 				svg{
 					margin: auto 6px;
+					color: $darknavy;
 				}
 			}
 			
@@ -650,6 +699,7 @@ body, html {
 			
 			h3{
 				font-size: 2em !important;
+				color: $darknavy;
 			}
 			@media screen and (max-width: $tabletBreak){
 				left: 50px;
@@ -666,7 +716,7 @@ body, html {
 	
 	.Section{
 		height: fit-content;
-		background: $darknavy;
+		background: $offwhite;
 		padding: 25px 60px;
 		display: flex;
 		flex-direction: row;
@@ -679,6 +729,7 @@ body, html {
 			font-weight: 100;
 			width: 430px;
 			font-family: 'Poppins Bold';
+			color: $darknavy;
 		}
 		.content-row {
 			width: calc(100% - 430px);
@@ -686,6 +737,8 @@ body, html {
 			padding: 10px 0 0;
 			line-height: 1.4em;
 			font-family: 'Poppins Regular';
+			color: $darknavy;
+
 			.content {
 				margin: 20px 0px;
 				padding-bottom: 20px;
@@ -733,11 +786,14 @@ body, html {
 					padding: 20px 30px;
 					border: 1px solid $lightorange;
 					font-size: 1.2em;
-					color: white;
+					color: $darknavy;
 					letter-spacing: 1.3px;
 					font-family: 'Poppins Regular';
 					margin: 25px 0;
 					cursor: pointer;
+					&:hover{
+						background-color: $lightorange;
+					}
 					@media screen and (max-width: $tabletBreak){
 						
 					}
@@ -888,7 +944,7 @@ body, html {
 		text-align: center;
 		align-items: center;
 		position: relative;
-		background-color: $lightnavy;
+		background: linear-gradient(to right,rgba(245,245,245, 0.4),rgba(245,245,245,0.4)), url('/images/backgrounds/common-bg.svg');
 		background-size: cover;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -902,7 +958,7 @@ body, html {
 			top: 20%;
 			left: 150px;
 			width: 700px;
-			color: white;
+			color: $darknavy;
 			font-weight: bold;
 			font-size: 4.5em;
 			line-height: 1.6em;
@@ -925,7 +981,7 @@ body, html {
 		text-align: center;
 		display: flex;
 		flex-direction: row;
-		background-color: $darknavy;
+		background-color: $offwhite;
 		padding: 100px 0;
 		.contact-left-container, .contact-right-container{
 			width: 50%;
@@ -938,13 +994,16 @@ body, html {
 			font-family: 'Poppins Regular';
 			h1{
 				font-size: 2.7em;
+				color: $darknavy;
 			}
 			h3{
 				font-size: 1.4em;
 				font-weight: 100;
 				font-family: 'Poppins Light';
+				color: $darknavy;
 			}
 			h2{
+				color: $darknavy;
 				font-family: 'Poppins Regular';
 				&.email{
 					color: $lightorange;
@@ -966,6 +1025,7 @@ body, html {
 				font-size: 1.4em;
 				font-weight: 100;
 				font-family: 'Poppins Light';
+				color: $darknavy;
 			}
 			.Form {
 				margin: 0 auto;
@@ -1144,7 +1204,7 @@ body, html {
 		text-align: center;
 		font-weight: bold;
 		font-size: 1.2rem;
-		background-color: $darknavy;
+		background-color: $offwhite;
 		padding: 100px;
 		.blogs-container{
 			display: flex;
@@ -1158,12 +1218,12 @@ body, html {
 				text-align: left;
 				font-family: 'Poppins Regular';
 				h3{
-					color: white;
+					color: $darknavy;
 					text-decoration: none;
 				}
 				p{
 					font-weight: 100;
-					color: white;
+					color: $darknavy;
 					text-decoration: none;
 				}
 				.image-container{

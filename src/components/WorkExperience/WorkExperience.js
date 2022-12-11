@@ -38,7 +38,7 @@ const WorkExperience = (props) => {
                         <h3>Dig a little deeper.</h3>
                     </div>
                     <div className="download">
-                        <a href="https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf" target="_blank" className="button">Download Resume <ReactIcons id="CustomTag" size="24" color="white" icon="BsArrowRight" background="#fff" /></a>
+                        <a href="https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf" target="_blank" className="button">Download Resume <ReactIcons id="CustomTag" size="24" icon="BsArrowRight" /></a>
                     </div>
                 </div>
             </div >

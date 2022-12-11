@@ -38,7 +38,7 @@ class AboutPageBuilder extends Component {
         //             this.setState({instagram_feed: instagram_feed});
         //         }
         //     });
-        // });       
+        // });
     }
 
     render() {

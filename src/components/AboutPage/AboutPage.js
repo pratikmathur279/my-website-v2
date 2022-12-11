@@ -45,7 +45,7 @@ const AboutPage = (props) => {
 				</div>
 
 				<div className="front-end-desc">
-					<h4><ReactIcons id="CustomTag" size="24" color="white" icon="BsDisplay" background="#fff" />FRONT-END WEB DEVELOPMENT</h4>
+					<h4><ReactIcons id="CustomTag" size="24" icon="BsDisplay" />FRONT-END WEB DEVELOPMENT</h4>
 					<p>I specialize in applications written in both React and Angular.</p>
 					<p>My current experience and skills in front-end includes:</p>
 					<ul>
@@ -57,7 +57,7 @@ const AboutPage = (props) => {
 				</div>
 
 				<div className="backend-desc">
-					<h4><ReactIcons id="CustomTag" size="24" color="white" icon="FaCode" background="#fff" />BACKEND WEB DEVELOPMENT</h4>
+					<h4><ReactIcons id="CustomTag" size="24" icon="FaCode" />BACKEND WEB DEVELOPMENT</h4>
 					<p>In back-end development, my current stack involves PHP Laravel, Java, NodeJS and Ruby on Rails.</p>
 					<p>Nearly every app I have launched in the past had the back-end done also by me. In order to improve the development speed, performance and reliability, I have changed languages and frameworks already multiple times, from PHP, Ruby to Elixir and Node.js; configured servers using just the shell, then Apache and wampp, and now Docker and Kubernetes.</p>
 					<ul>

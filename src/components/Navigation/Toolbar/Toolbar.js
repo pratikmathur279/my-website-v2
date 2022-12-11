@@ -16,7 +16,7 @@ const Toolbar = (props) => {
             <DrawerToggle clicked={props.drawerToggleClicked} />
 
             <Link to="/" className="my-logo">
-                <img alt="Logo" src={props.navScrolled === 'scrolled' ? "/images/logo2.png" : "/images/logo.png"} />
+                <img alt="Logo" src={props.navScrolled === 'scrolled' ? "/images/logos/logo.png" : "/images/logos/logo.png"} />
             </Link>
 
             <nav className="DesktopOnly">
