@@ -35,19 +35,19 @@ const Homepage = (props) => {
 
             </div>
 
-            {/* <LazyLoad height={650}> */}
-            <HexagonsContainer {...props} />
-            {/* </LazyLoad> */}
+            <LazyLoad height={850}>
+                <HexagonsContainer {...props} />
+            </LazyLoad>
 
-            {/* <LazyLoad height={800}> */}
-            < div className="intro-skills-wrapper" >
-                <IntroContainer />
+            <LazyLoad height={1500}>
+                < div className="intro-skills-wrapper" >
+                    <IntroContainer />
 
-                <div className="SkillsContainer">
-                    <SkillsBar skills={props.skills} />
-                </div>
-            </div >
-            {/* </LazyLoad > */}
+                    <div className="SkillsContainer">
+                        <SkillsBar skills={props.skills} />
+                    </div>
+                </div >
+            </LazyLoad >
         </div>
     )
 }

@@ -24,13 +24,10 @@ class HomepageBuilder extends Component {
 
 	componentWillMount() {
 		let state = Object.assign({}, this.state);
-		// let split = this.createRows(state.hexagons);
-		// state.hexagons = split;
 		this.actions.getSkills(state.skills, (data) => {
 			state.skills = data;
 			this.setState(state);
 		});
-
 	}
 
 	handleClick(e) {

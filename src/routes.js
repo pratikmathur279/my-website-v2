@@ -27,7 +27,7 @@ var routes = (
                 <Route path="/projects" component={ProjectsPageBuilder} />
                 <Route path="/contact" component={ContactPageBuilder} />
                 <Route path="/blog" component={BlogBuilder} />
-                {/* <Route component={NotFound} /> */}
+                <Route component={NotFound} />
             </Switch>
 
             <Footer />
