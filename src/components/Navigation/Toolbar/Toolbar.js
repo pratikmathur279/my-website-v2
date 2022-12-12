@@ -16,7 +16,7 @@ const Toolbar = (props) => {
             <DrawerToggle clicked={props.drawerToggleClicked} />
 
             <Link to="/" className="my-logo">
-                <img alt="Logo" src="/images/logos/pm_logo.png" />
+                <img alt="Pratik Mathur Logo" src="/images/logos/pm_logo.png" />
             </Link>
 
             <nav className="DesktopOnly">
