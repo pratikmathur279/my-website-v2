@@ -41,6 +41,10 @@ const WorkExperience = (props) => {
                         <a href="https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf" target="_blank" className="button">Download Resume <ReactIcons id="CustomTag" size="24" icon="BsArrowRight" /></a>
                     </div>
                 </div>
+
+                <div className='home-mouse'>
+                    <div className='mouse'></div>
+                </div>
             </div >
 
             {props.loading && <Loading />}

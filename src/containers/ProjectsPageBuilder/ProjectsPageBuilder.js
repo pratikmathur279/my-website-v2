@@ -81,6 +81,10 @@ class ProjectsPageBuilder extends Component {
                         <div className="title">
                             <h3 className="ProjectsHeader">Projects</h3>
                         </div>
+
+                        <div className='home-mouse'>
+                            <div className='mouse'></div>
+                        </div>
                     </div>
                     <Modal show={this.state.showProject} modalClosed={this.closeModalHandler}>
                         <ProjectInformation showProject={this.state.showProject} card={this.state.selected} />

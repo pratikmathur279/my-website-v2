@@ -41,6 +41,30 @@ class BlogBuilder extends Component {
                     description: '',
                     image: 'D7iB4iTOHyaFEVCL0l1uPlKRMsS2-yv93gmq.jpg'
                 },
+                {
+                    url: 'https://dzone.com/articles/chatgpt-vs-gpt3-the-ultimate-comparison-features',
+                    header: 'ChatGPT vs. GPT3: The Ultimate Comparison',
+                    description: '',
+                    image: 'eb23d82c26b9e4f0c728dc93463c5798.webp'
+                },
+                {
+                    url: 'https://dkb.io/post/google-search-is-dying',
+                    header: 'Google Search Is Dying',
+                    description: '',
+                    image: '7f5b7f499973f5947d6f40ae09e18d30.webp'
+                },
+                {
+                    url: 'https://dev.to/render/git-organized-a-better-git-flow-56go',
+                    header: 'Git Organized: A Better Git Flow',
+                    description: '',
+                    image: '427yh9kull5oycojetde.webp'
+                },
+                {
+                    url: 'https://devdojo.com/abhiraj/10-github-repos-you-cannot-miss-out-on',
+                    header: '10 GitHub repos you cannot miss out on',
+                    description: '',
+                    image: '541c4c594c69987ed3c05ff7f9edce95.webp'
+                },
             ]
         };
     }
@@ -68,6 +92,10 @@ class BlogBuilder extends Component {
                 <div className="blog-wrapper">
                     <div className="blog-header-container">
                         <h1>My Insights</h1>
+                    </div>
+
+                    <div className='home-mouse'>
+                        <div className='mouse'></div>
                     </div>
                 </div>
                 <div className="blogs-wrapper">

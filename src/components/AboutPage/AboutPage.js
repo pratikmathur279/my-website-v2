@@ -14,6 +14,10 @@ const AboutPage = (props) => {
 				<div className='content-wrapper'>
 					<h3>My Passions & Personality</h3>
 				</div>
+
+				<div className='home-mouse'>
+                    <div className='mouse'></div>
+                </div>
 			</div>
 
 			<div className="description">

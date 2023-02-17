@@ -37,6 +37,33 @@ body, html {
     background: #888;
 }
 
+.home-mouse{
+	position: absolute;
+	bottom: 3%;
+	left: 50%;
+	transform: translateX(-50%);
+	.mouse{
+		width: 25px;
+		height: 40px;
+		border: 2px solid $darknavy;
+		border-radius: 60px;
+		position: relative;
+		overflow: hidden;
+		&::before{
+			content: '';
+			width: 5px;
+			height: 5px;
+			position: absolute;
+			top: 7px;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: $darknavy;
+			border-radius: 50%;
+			animation: wheel 1.2s infinite;
+		}
+	}
+}
+
 .Homepage {
     display: flex;
     flex-direction: column;
@@ -53,32 +80,7 @@ body, html {
 		font-weight: bold;
 		font-size: 1.2rem;
 		background: linear-gradient(to right,rgba(245,245,245, 0.4),rgba(245,245,245,0.4)), url('/images/backgrounds/common-bg.svg');
-		.home-mouse{
-			position: absolute;
-			bottom: 3%;
-			left: 50%;
-			transform: translateX(-50%);
-			.mouse{
-				width: 25px;
-				height: 40px;
-				border: 2px solid $darknavy;
-				border-radius: 60px;
-				position: relative;
-				overflow: hidden;
-				&::before{
-					content: '';
-					width: 5px;
-					height: 5px;
-					position: absolute;
-					top: 7px;
-					left: 50%;
-					transform: translateX(-50%);
-					background-color: $darknavy;
-					border-radius: 50%;
-					animation: wheel 1.2s infinite;
-				}
-			}
-		}
+		
 		.homepage-container{
 			display: block;
 			position: absolute;
@@ -157,7 +159,6 @@ body, html {
 				top: 15%;
 				.header-content{
 					flex: 0 0 calc(100% - 450px);
-					padding-left: 50px;
 					.content-wrapper{
 						padding: 0;
 					}
@@ -223,6 +224,9 @@ body, html {
 		width: 100%;
 		padding: 100px 0;
 		background-color: $offwhite;
+		@media screen and (max-width: $mobileLargeBreak){
+			padding: 60px 0;
+		}
 		.descriptionWrapper{
 			display: flex;
 			width: 85vw;
@@ -303,16 +307,11 @@ body, html {
 					border-top: 37.53px solid $orange;
 				}
 				.Icons {
-					display: block;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					margin: 0 auto;
-					width: 62%;
-					.material-icons{
-						color: white;
-						max-width: 80px !important;
-						max-height: 80px !important;
-						display: block;
-						margin: auto;
-					}
+					width: 100%;
 				}
 			}
 			h3 {

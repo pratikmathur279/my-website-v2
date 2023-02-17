@@ -11,7 +11,10 @@ class HomepageBuilder extends Component {
 			isFlipped: false,
 			name: 'Pratik Mathur',
 			hexagons: [
-				{ id: 0, name: 'speedometer', title: 'Fast', desc: 'Fast load times and lag free interaction' }, { id: 1, name: 'laptop', title: 'Responsive', desc: 'My layouts will work on any device.' }, { id: 2, name: 'lightbulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.' }, { id: 3, name: 'flight', title: 'Dynamic', desc: 'I love making dynamic websites' }
+				{ id: 0, name: 'IoIosSpeedometer', title: 'Fast', desc: 'Fast load times and lag free interaction' }, 
+				{ id: 1, name: 'FaLaptop', title: 'Responsive', desc: 'My layouts will work on any device.' }, 
+				{ id: 2, name: 'AiOutlineBulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.' }, 
+				{ id: 3, name: 'FaRocket', title: 'Dynamic', desc: 'I love making dynamic websites' }
 			],
 			skills: [],
 			description: {

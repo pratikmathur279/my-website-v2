@@ -50,9 +50,13 @@ const ReactIcons = ({ icon, background, size, color }) => {
             break;
         case 'cg': module = require('react-icons/ri');
             break;
+        case 'sl': module = require('react-icons/sl');
+            break;
     }
 
     let CustomTag = module[icon];
+
+    console.log(CustomTag);
 
     return (
         <CustomTag id="CustomTag" size={size} color={color} />

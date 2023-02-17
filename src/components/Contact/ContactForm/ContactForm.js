@@ -33,17 +33,12 @@ const ContactForm = (props) => {
                 <h3>Have a question or want to work together? Fill in the form below and I'll get back to you as soon as possible.</h3>
                 {props.emailSent ? <p className="EmailSent"> Email sent!</p > : ""}
                 <div className="Form">
-                    <form>
                         <TextInput errors={props.errors} onChange={props.onChange} id="name" name="name" placeholder="Enter your full name" value={props.formControls.name.value} />
                         <TextInput errors={props.errors} onChange={props.onChange} id="email" name="email" placeholder="Enter your email address" value={props.formControls.email.value} />
                         <TextInput errors={props.errors} onChange={props.onChange} id="subject" name="subject" placeholder="Please enter a subject" value={props.formControls.subject.value} />
                         <TextArea errors={props.errors} onChange={props.onChange} name="message" placeholder="Enter message" value={props.formControls.message.value} />
 
-                        {/* <GoogleReCaptchaProvider reCaptchaKey="6LeAWrAZAAAAAFASPD_vO5-BxWMVItw0hISUJO2L">
-                        <YourReCaptchaComponent />
-                    </GoogleReCaptchaProvider> */}
                         <button type="button" onClick={props.onClick}>Send!</button>
-                    </form >
                 </div>
             </div>
         </div >

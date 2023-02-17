@@ -2,13 +2,16 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
+import ReactIcons from '../../common/reactIcons';
+
 const HexagonsContainer = (props) => {
     const buildList = (hex) => {
+        console.log(hex.name);
         return (
             <div key={hex.id} className="AlignHexagon">
                 <div className="Hexagon">
                     <div className="Icons">
-                        <MaterialIcon key={hex.id} icon={hex.name} size={window.innerWidth <= 500 ? 60 : 80} />
+                        <ReactIcons key={hex.id} icon={hex.name} size={60} />
                     </div>
 
                 </div >
