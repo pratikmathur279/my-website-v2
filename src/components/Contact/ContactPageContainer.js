@@ -6,8 +6,8 @@ const ContactPageContainer = (props) => {
 
     return (
         <div className="contact-wrapper">
-            <div className="header-container">
-                <div className="title">
+            <div className="header-wrapper">
+                <div className="header-container">
                     <h3>Connect with me today.</h3>
                 </div>
 

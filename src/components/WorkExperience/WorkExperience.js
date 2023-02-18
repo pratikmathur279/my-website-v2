@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Experience from './Experience/Experience';
-import Loading from '../UI/Loading/Loading';
 import ReactIcons from '../common/reactIcons';
 
 const WorkExperience = (props) => {
@@ -31,23 +30,7 @@ const WorkExperience = (props) => {
     }
 
     return (
-        <div className="work-experience-wrapper">
-            <div className="header-container" >
-                <div className="Content">
-                    <div className="heading">
-                        <h3>Dig a little deeper.</h3>
-                    </div>
-                    <div className="download">
-                        <a href="https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf" target="_blank" className="button">Download Resume <ReactIcons id="CustomTag" size="24" icon="BsArrowRight" /></a>
-                    </div>
-                </div>
-
-                <div className='home-mouse'>
-                    <div className='mouse'></div>
-                </div>
-            </div >
-
-            {props.loading && <Loading />}
+        <div>
             <div className="Section" >
                 <h2>Technologies</h2>
                 <div className="content-row TechnologyRow">
@@ -59,7 +42,6 @@ const WorkExperience = (props) => {
                 <div className="content-row">
                     {props.experience.map(buildExperiences)}
                 </div>
-
             </div>
         </div >
     )

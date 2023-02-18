@@ -89,9 +89,9 @@ class BlogBuilder extends Component {
 
         return (
             <div className="blog-builder-wrapper" >
-                <div className="blog-wrapper">
-                    <div className="blog-header-container">
-                        <h1>My Insights</h1>
+                <div className="header-wrapper">
+                    <div className="header-container">
+                        <h3>My Insights</h3>
                     </div>
 
                     <div className='home-mouse'>

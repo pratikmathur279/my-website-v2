@@ -10,14 +10,14 @@ const AboutPage = (props) => {
 
 	return (
 		<div className="about-page-wrapper">
-			<div className="about-page-container">
-				<div className='content-wrapper'>
+			<div className="header-wrapper">
+				<div className='header-container'>
 					<h3>My Passions & Personality</h3>
 				</div>
 
 				<div className='home-mouse'>
-                    <div className='mouse'></div>
-                </div>
+					<div className='mouse'></div>
+				</div>
 			</div>
 
 			<div className="description">

@@ -11,6 +11,8 @@ const Toolbar = (props) => {
         toolbarCSS = toolbarCSS + `Scrolled`;
     }
 
+    console.log(window.location);
+
     return (
         <header className={toolbarCSS}>
             <DrawerToggle clicked={props.drawerToggleClicked} />

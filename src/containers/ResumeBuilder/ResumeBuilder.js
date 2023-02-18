@@ -6,6 +6,9 @@ import WorkExperience from '../../components/WorkExperience/WorkExperience';
 import Education from '../../components/Education/Education';
 import Certifications from '../../components/Certifications/Certifications';
 
+import Loading from '../../components/UI/Loading/Loading';
+import ReactIcons from '../../components/common/reactIcons';
+
 import Actions from '../../actions/Actions';
 
 class ResumeBuilder extends Component {
@@ -57,21 +60,39 @@ class ResumeBuilder extends Component {
     render() {
         return (
             <Auxiliary>
-                <WorkExperience experience={this.state.experience} loading={this.state.loading} technology={this.state.technology} />
-                <Education />
-                <Certifications />
+                {this.state.loading && <Loading />}
 
-                <div className="latest-projects-wrapper">
-                    <div className="Section">
-                        <h2>Latest Work</h2>
-                        <div className="content-row">
-                            <div className="latest-projects">
-                                <h3>Interested to see what I’ve been up to?</h3>
-                                <Link exact to='/projects'>View Projects</Link >
+                <div className="work-experience-wrapper">
+                    <div className="header-wrapper">
+                        <div className="header-container">
+                            <h3>Dig a little deeper.</h3>
+                            <div className="download">
+                                <a href="https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf" target="_blank" className="button"><span>Download Resume <ReactIcons id="CustomTag" size="24" icon="BsArrowRight" /></span></a>
+                            </div>
+                        </div>
+
+                        <div className='home-mouse'>
+                            <div className='mouse'></div>
+                        </div>
+                    </div>
+
+                    <WorkExperience experience={this.state.experience} loading={this.state.loading} technology={this.state.technology} />
+                    <Education />
+                    <Certifications />
+
+                    <div className="latest-projects-wrapper">
+                        <div className="Section">
+                            <h2>Latest Work</h2>
+                            <div className="content-row">
+                                <div className="latest-projects">
+                                    <h3>Interested to see what I’ve been up to?</h3>
+                                    <Link exact to='/projects'>View Projects</Link >
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
             </Auxiliary>
         );

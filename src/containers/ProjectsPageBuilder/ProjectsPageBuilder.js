@@ -77,8 +77,8 @@ class ProjectsPageBuilder extends Component {
         return (
             <Auxiliary>
                 <div className="projects-wrapper">
-                    <div className="ProjectsContainer">
-                        <div className="title">
+                    <div className="header-wrapper">
+                        <div className="header-container">
                             <h3 className="ProjectsHeader">Projects</h3>
                         </div>
 

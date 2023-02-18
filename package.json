@@ -72,14 +72,9 @@
 		"xml2js": "^0.4.23"
 	},
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject",
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build",
 		"dev": "webpack --config=webpack.config.js",
-		"production": "webpack --config=webpack.prod.js"
+		"production": "webpack --config=webpack.prod.js",
+		"start": "cd server && node index.js"
 	},
 	"browserslist": {
 		"production": [

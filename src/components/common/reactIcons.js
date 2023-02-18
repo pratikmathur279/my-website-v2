@@ -55,9 +55,6 @@ const ReactIcons = ({ icon, background, size, color }) => {
     }
 
     let CustomTag = module[icon];
-
-    console.log(CustomTag);
-
     return (
         <CustomTag id="CustomTag" size={size} color={color} />
     );
