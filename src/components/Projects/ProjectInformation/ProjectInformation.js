@@ -6,6 +6,7 @@ const ProjectInformation = (props) => {
     let url = props.card.url;
     return (
         <div className="ProjectInformation">
+            
             <img id={props.card.index}
                 src={'./images/' + props.card.url}
                 alt={props.card.name}></img>

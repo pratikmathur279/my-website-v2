@@ -335,24 +335,57 @@
 
 .Modal {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 500;
-    background-color: white;
-    width: 80%;
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px black;
-    /* padding: 16px; */
-    left: 10%;
-    height: fit-content;
-    top: 10%;
     box-sizing: border-box;
     transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .modal-content{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+		width: min(90%, 850px);
+		display: block;
+		background-color: #fff;
+		height: fit-content;
+        padding: 40px;
+        box-sizing: border-box;
+        height: min(90vh, 600px);
+        border-radius: 20px;
+    }
+    @media screen and (max-width: $tabletBreak){
+        .modal-content{
+            top: 100px;
+            transform: translate(-50%, 0);
+        }
+    }
 }
 
-@media (min-width: 600px) {
-    .Modal {
-        width: 50%;
-        left: calc(45% - 250px);
-        height: fit-content;
-        top: 10%;
+#close{
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    &::after{
+        position: absolute;
+        content: "\d7";
+        font-size: 35px;
+        color: black;
+        font-weight: bold;
+        top: 0;
+        left: 0;
     }
 }
