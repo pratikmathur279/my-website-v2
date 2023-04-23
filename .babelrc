@@ -5,6 +5,7 @@
 	],
 	"plugins": [
 		"@babel/transform-object-assign",
+		"macros",
 		[
 			"@babel/plugin-transform-runtime",
 			{
